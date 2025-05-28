@@ -1,1 +1,6 @@
-I started learning web programming more than a year ago when I registered in a website development course on Udemy with the teacher Colt. After many months of studying the concepts of front-end and back-end programming, I started working on this project for the course. The idea of ​​the project revolves around creating camping sites for each user and the possibility of adding reviews to them in addition to the presence of a map showing the location of the camping site. This project helped me develop my level in website programming, especially in back-end programming by dealing with databases.
+About This Project:
+I started learning web programming over a year ago by enrolling in a web development course on Udemy taught by Colt. After many months of studying front-end and back-end concepts, I began working on this project as part of the course.
+
+The project’s idea revolves around creating camping sites for each user, allowing them to add reviews, and featuring a map to display the location of each campsite.
+
+This project has significantly helped me improve my web development skills, especially in back-end programming through working with databases.
