@@ -1,6 +1,6 @@
 About This Project:
-I started learning web programming over a year ago by enrolling in a web development course on Udemy taught by Colt. After many months of studying front-end and back-end concepts, I began working on this project as part of the course.
+I started learning web development over a year ago by taking a Udemy course. After months of studying both front-end and back-end concepts, I created this project as part of the course.
 
-The project’s idea revolves around creating camping sites for each user, allowing them to add reviews, and featuring a map to display the location of each campsite.
+The project allows users to create and manage camping sites, add reviews, and view campsite locations on an interactive map.
 
-This project has significantly helped me improve my web development skills, especially in back-end programming through working with databases.
+Working on this project helped me strengthen my web development skills, particularly in back-end programming and database management.
