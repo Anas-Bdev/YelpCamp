@@ -1,36 +1,106 @@
-# 🌲 YelpCamp – Campground Management Platform
+# 🌲 YelpCamp – Full-Stack Campground Management System
 
-A full-stack web application that allows users to **discover, create, review, and manage campgrounds**, with secure authentication, authorization, and interactive map integration.  
-The project focuses on **backend architecture, security, and real-world application logic**.
+A full-stack web application that allows users to **discover, create, review, and manage campgrounds**, featuring secure authentication, authorization, interactive maps, and clean backend architecture.
+
+This project focuses heavily on **backend design, data modeling, and real-world application logic**.
 
 ---
 
 ## 🚀 Features
 
 - 🔐 User authentication & authorization (register / login / logout)
-- 🏕 Create, update, and delete campgrounds
-- ⭐ Add reviews and ratings for campgrounds
+- 🏕 Create, edit, and delete campgrounds
+- ⭐ Add reviews and ratings
 - ❤️ Save favorite campgrounds per user
-- 🗺 Interactive map displaying campground locations
-- 🧾 Ownership-based permissions (only owners can edit or delete)
-- ⚠️ Server-side validation and centralized error handling
-- 📦 Clean RESTful routing and MVC structure
+- 🗺 Interactive map with campground locations
+- 🧾 Ownership-based permissions
+- ⚠️ Centralized error handling & validation
+- 📦 Clean MVC-based backend structure
+
+---
+## 🧱 Project Architecture & Folder Structure
+
+The project follows a **clear MVC-style backend architecture** with separation of concerns:
+
+```text
+YELPCAMP/
+│
+├── cloudinary/            # Cloudinary image upload configuration
+│
+├── controllers/           # Request handling & business logic
+│   ├── campgrounds.js
+│   ├── reviews.js
+│   └── users.js
+│
+├── models/                # Mongoose data models
+│   ├── campground.js
+│   ├── review.js
+│   └── user.js
+│
+├── routes/                # Express route definitions
+│   ├── campgrounds.js
+│   ├── reviews.js
+│   └── users.js
+│
+├── views/                 # EJS templates (UI rendering)
+│
+├── public/                # Static assets (CSS, JS)
+│
+├── utils/                 # Utility helpers (error handling, wrappers)
+│   ├── ExpressError.js
+│   └── catchAsync.js
+│
+├── seeds/                 # Database seeding scripts
+│
+├── middleware.js          # Authentication & authorization middleware
+├── schemas.js             # Joi validation schemas
+├── app.js                 # Application entry point
+│
+├── .env                   # Environment variables
+├── .gitignore
+├── package.json
+└── package-lock.json
+```
+---
+## 🧠 Backend Logic & Design Decisions
+
+### 🔹 Controllers
+- Handle incoming requests
+- Contain application logic
+- Keep routes clean and readable
+
+### 🔹 Routes
+- RESTful routing
+- Delegates logic to controllers
+- Applies middleware where needed
+
+### 🔹 Models
+- MongoDB schemas using Mongoose
+- Defines relationships between:
+  - Users
+  - Campgrounds
+  - Reviews
+
+### 🔹 Middleware
+- Authentication checks
+- Authorization (resource ownership)
+- Route protection
+- Request validation
+
+### 🔹 Utils
+- Centralized async error handling
+- Custom error classes for consistent responses
 
 ---
 
-## 🧠 Core Backend Logic & Concepts
+## 🔐 Authentication & Authorization
 
-This project was designed to simulate a **real-world backend system**, focusing on:
-
-- RESTful API design using proper HTTP verbs
-- Secure authentication using session-based login
-- Authorization logic based on resource ownership
-- Middleware-driven request validation
-- Relational data modeling between users, campgrounds, and reviews
-- Centralized error handling for clean and consistent responses
-- Defensive programming to handle edge cases and invalid input
-
-The main emphasis is on **data integrity, security, and scalability**.
+- Passwords are securely hashed before storage
+- Session-based authentication using Passport.js
+- Middleware protects sensitive routes
+- Authorization ensures:
+  - Only authenticated users can create content
+  - Only owners can edit or delete their resources
 
 ---
 
@@ -42,50 +112,23 @@ The main emphasis is on **data integrity, security, and scalability**.
 
 ### Database
 - MongoDB
-- Mongoose (ODM)
+- Mongoose
 
 ### Authentication & Security
 - Passport.js
 - bcrypt
 - express-session
 
+### Validation
+- Joi
+
 ### Frontend / Views
 - EJS
 - Bootstrap
 
-### Maps & External Services
-- Mapbox (geolocation & interactive maps)
-
-### Validation & Utilities
-- Joi
-- Express middleware
-
----
-
-## 🔐 Authentication & Authorization Details
-
-- Passwords are **hashed before storage**
-- Protected routes implemented using middleware
-- Authorization ensures:
-  - Only logged-in users can create content
-  - Only resource owners can edit or delete their campgrounds or reviews
-- Session-based authentication for persistent login
-
----
-
-## 🗂 Data Model Overview
-
-- **User**
-  - Authentication credentials
-  - List of favorite campgrounds
-- **Campground**
-  - Title, description, location, images
-  - Reference to owner (User)
-  - Associated reviews
-- **Review**
-  - Rating and comment
-  - Reference to author (User)
-  - Reference to campground
+### External Services
+- Cloudinary (image uploads)
+- Mapbox (maps & geolocation)
 
 ---
 
@@ -102,4 +145,3 @@ git clone https://github.com/Anas-Bdev/YelpCamp.git
 cd YelpCamp
 npm install
 npm start
-
